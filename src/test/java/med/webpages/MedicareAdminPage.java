@@ -89,6 +89,7 @@ public class MedicareAdminPage extends TestPageBase {
 		//System.out.println("Program starting - View Product link clicked");
 		//execJsScript(orderPageScrollJsBuilder);		
 		viewProductPage.selectDropdownViewProduct(hashMapPdtEditVal.get("dropdownSelectValue"));
+		execJsScript(orderPageScrollJsBuilder);
 		viewProductPage.selectPageViewProduct(hashMapPdtEditVal.get("pageNumber"));
 		viewProductPage.clickviewProductLast(hashMapPdtEditVal.get("rowNumber"));
 		waitForPageToBeVisible(saveBtnXpathBuilder);		
