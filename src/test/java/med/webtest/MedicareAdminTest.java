@@ -54,10 +54,12 @@ public class MedicareAdminTest extends TestBase {
 		medicareAdminPage.validateAddNewProduct(hashMapNewProduct,medicareViewProductPage);
 	}
 	
-	@Test(enabled=true, dependsOnMethods = {"validateAddCategory","validateAddProduct"}, groups = { "test-admin" }, dataProvider ="admin-editproduct", dataProviderClass = MedicareAdminTestData.class)
+	@Test(enabled=true,dependsOnMethods = {"validateAddCategory","validateAddProduct"}, groups = { "test-admin" }, dataProvider ="admin-editproduct", dataProviderClass = MedicareAdminTestData.class)
 	public void validateEditProduct(HashMap<String,String> hashMapEditProduct) throws InterruptedException {
 		
 		medicareAdminPage.validateEditNewProduct(hashMapEditProduct,medicareViewProductPage);
-	}	
+	}
+	
+	//dependsOnMethods = {"validateAddCategory","validateAddProduct"},
 
 }

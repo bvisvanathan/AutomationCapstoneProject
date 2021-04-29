@@ -84,31 +84,43 @@ public class MedicareAdminPage extends TestPageBase {
 	public void validateEditNewProduct(HashMap<String,String> hashMapPdtEditVal,MedicareViewProductsPage viewProductPage) throws InterruptedException {
 		
 		//clickElementWithFluentWait(managePdtXpathBuilder);
-		//System.out.println("Program starting");
+		System.out.println("Program starting");
 		viewProductPage.clickViewProductLink();
-		//System.out.println("Program starting - View Product link clicked");
+		System.out.println("Program starting - View Product link clicked");
 		//execJsScript(orderPageScrollJsBuilder);		
 		viewProductPage.selectDropdownViewProduct(hashMapPdtEditVal.get("dropdownSelectValue"));
 		execJsScript(orderPageScrollJsBuilder);
+		System.out.println("Program starting - scroll clicked");
 		viewProductPage.selectPageViewProduct(hashMapPdtEditVal.get("pageNumber"));
+		System.out.println("Program starting - page number clicked");
 		viewProductPage.clickviewProductLast(hashMapPdtEditVal.get("rowNumber"));
+		System.out.println("Program starting - row number clicked");
 		waitForPageToBeVisible(saveBtnXpathBuilder);		
+		System.out.println("Program starting - editing values");
 		addPdtNameEl.clear();
 		addPdtNameEl.sendKeys(hashMapPdtEditVal.get("expProductName"));
+		System.out.println(hashMapPdtEditVal.get("expProductName"));
 		addPdtBndEl.clear();
 		addPdtBndEl.sendKeys(hashMapPdtEditVal.get("expProductBrand"));
+		System.out.println(hashMapPdtEditVal.get("expProductBrand"));
 		addPdtDescEl.clear();
 		addPdtDescEl.sendKeys(hashMapPdtEditVal.get("expProductDesc"));
+		System.out.println(hashMapPdtEditVal.get("expProductDesc"));
 		addPdtUnitEl.clear();
 		addPdtUnitEl.sendKeys(hashMapPdtEditVal.get("expUnitPrice"));
+		System.out.println(hashMapPdtEditVal.get("expUnitPrice"));
 		addPdtQtyEl.clear();
 		addPdtQtyEl.sendKeys(hashMapPdtEditVal.get("expProductQty"));
+		System.out.println(hashMapPdtEditVal.get("expProductQty"));
 		addPdtFileEl.clear();
 		//String filePath = MedicareFileUtil.getMedicareTestImagesResourcePath()+"\\"+hashMapPdtEditVal.get("fileLocation");
 		addPdtFileEl.sendKeys(MedicarePropertyConfig.PRODUCTIMAGEURI);
+		System.out.println("file selected");
 		Select dropdown = new Select(drpdnPdtCatEl);
   		dropdown.selectByVisibleText(hashMapPdtEditVal.get("productCategory"));
+  		System.out.println("dropdown category selected");
 		pdtBtnSaveEl.click();
+		System.out.println("save clicked");
   		viewProductPage.clickViewProductLink();
   		viewProductPage.validateAdminProduct(hashMapPdtEditVal);  		
 		
