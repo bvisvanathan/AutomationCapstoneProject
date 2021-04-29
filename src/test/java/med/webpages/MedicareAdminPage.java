@@ -19,6 +19,8 @@ public class MedicareAdminPage extends TestPageBase {
 	private final String managePdtXpathBuilder = "//a[text()='Manage Product']";
 	private final String addCatXpathBuilder = "//button[text()='Add New Category']";
 	private final String orderPageScrollJsBuilder = "window.scrollBy(0,document.body.scrollHeight)";
+	private final String unitPriceJsBuilder = "document.querySelector('#unitPrice').value =";
+	private final String quantityJsBuilder = "document.querySelector('#quantity').value =";
 	
 	
 	
@@ -97,22 +99,24 @@ public class MedicareAdminPage extends TestPageBase {
 		System.out.println("Program starting - row number clicked");
 		waitForPageToBeVisible(saveBtnXpathBuilder);		
 		System.out.println("Program starting - editing values");
-		addPdtNameEl.clear();
-		addPdtNameEl.sendKeys(hashMapPdtEditVal.get("expProductName"));
-		System.out.println(hashMapPdtEditVal.get("expProductName"));
-		addPdtBndEl.clear();
-		addPdtBndEl.sendKeys(hashMapPdtEditVal.get("expProductBrand"));
-		System.out.println(hashMapPdtEditVal.get("expProductBrand"));
-		addPdtDescEl.clear();
-		addPdtDescEl.sendKeys(hashMapPdtEditVal.get("expProductDesc"));
-		System.out.println(hashMapPdtEditVal.get("expProductDesc"));
-		addPdtUnitEl.clear();
-		addPdtUnitEl.sendKeys(hashMapPdtEditVal.get("expUnitPrice"));
+		//addPdtNameEl.clear();
+		//addPdtNameEl.sendKeys(hashMapPdtEditVal.get("expProductName"));
+		//System.out.println(hashMapPdtEditVal.get("expProductName"));
+		//addPdtBndEl.clear();
+		//addPdtBndEl.sendKeys(hashMapPdtEditVal.get("expProductBrand"));
+		//System.out.println(hashMapPdtEditVal.get("expProductBrand"));
+		//addPdtDescEl.clear();
+		//addPdtDescEl.sendKeys(hashMapPdtEditVal.get("expProductDesc"));
+		//System.out.println(hashMapPdtEditVal.get("expProductDesc"));
+		//addPdtUnitEl.clear();
+		execJsScript(unitPriceJsBuilder+hashMapPdtEditVal.get("expUnitPrice"));
+		//addPdtUnitEl.sendKeys(hashMapPdtEditVal.get("expUnitPrice"));
 		System.out.println(hashMapPdtEditVal.get("expUnitPrice"));
-		addPdtQtyEl.clear();
-		addPdtQtyEl.sendKeys(hashMapPdtEditVal.get("expProductQty"));
+		//addPdtQtyEl.clear();
+		execJsScript(quantityJsBuilder+hashMapPdtEditVal.get("expProductQty"));
+		//addPdtQtyEl.sendKeys(hashMapPdtEditVal.get("expProductQty"));
 		System.out.println(hashMapPdtEditVal.get("expProductQty"));
-		addPdtFileEl.clear();
+		//addPdtFileEl.clear();
 		//String filePath = MedicareFileUtil.getMedicareTestImagesResourcePath()+"\\"+hashMapPdtEditVal.get("fileLocation");
 		addPdtFileEl.sendKeys(MedicarePropertyConfig.PRODUCTIMAGEURI);
 		System.out.println("file selected");
