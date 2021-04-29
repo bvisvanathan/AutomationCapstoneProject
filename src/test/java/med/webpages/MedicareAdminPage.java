@@ -84,8 +84,10 @@ public class MedicareAdminPage extends TestPageBase {
 	public void validateEditNewProduct(HashMap<String,String> hashMapPdtEditVal,MedicareViewProductsPage viewProductPage) throws InterruptedException {
 		
 		//clickElementWithFluentWait(managePdtXpathBuilder);
+		//System.out.println("Program starting");
 		viewProductPage.clickViewProductLink();
-		execJsScript(orderPageScrollJsBuilder);
+		//System.out.println("Program starting - View Product link clicked");
+		//execJsScript(orderPageScrollJsBuilder);		
 		viewProductPage.selectDropdownViewProduct(hashMapPdtEditVal.get("dropdownSelectValue"));
 		viewProductPage.selectPageViewProduct(hashMapPdtEditVal.get("pageNumber"));
 		viewProductPage.clickviewProductLast(hashMapPdtEditVal.get("rowNumber"));
