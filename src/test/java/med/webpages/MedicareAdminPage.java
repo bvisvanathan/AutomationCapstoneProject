@@ -10,6 +10,7 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
+import med.webproperties.MedicarePropertyConfig;
 import med.webutil.MedicareFileUtil;
 
 public class MedicareAdminPage extends TestPageBase {
@@ -69,8 +70,8 @@ public class MedicareAdminPage extends TestPageBase {
 		addPdtUnitEl.sendKeys(hashMapProductVal.get("productPrice"));
 		addPdtQtyEl.clear();
 		addPdtQtyEl.sendKeys(hashMapProductVal.get("productQty"));
-		String filePath = MedicareFileUtil.getMedicareTestImagesResourcePath()+"\\"+hashMapProductVal.get("fileLocation");
-		addPdtFileEl.sendKeys(filePath);
+		//String filePath = MedicareFileUtil.getMedicareTestImagesResourcePath()+"\\"+hashMapProductVal.get("fileLocation");
+		addPdtFileEl.sendKeys(MedicarePropertyConfig.PRODUCTIMAGEURI);
 		Select dropdown = new Select(drpdnPdtCatEl);
   		dropdown.selectByVisibleText(hashMapProductVal.get("productCategory"));
   		pdtBtnSaveEl.click();
@@ -100,8 +101,8 @@ public class MedicareAdminPage extends TestPageBase {
 		addPdtQtyEl.clear();
 		addPdtQtyEl.sendKeys(hashMapPdtEditVal.get("expProductQty"));
 		addPdtFileEl.clear();
-		String filePath = MedicareFileUtil.getMedicareTestImagesResourcePath()+"\\"+hashMapPdtEditVal.get("fileLocation");
-		addPdtFileEl.sendKeys(filePath);
+		//String filePath = MedicareFileUtil.getMedicareTestImagesResourcePath()+"\\"+hashMapPdtEditVal.get("fileLocation");
+		addPdtFileEl.sendKeys(MedicarePropertyConfig.PRODUCTIMAGEURI);
 		Select dropdown = new Select(drpdnPdtCatEl);
   		dropdown.selectByVisibleText(hashMapPdtEditVal.get("productCategory"));
 		pdtBtnSaveEl.click();

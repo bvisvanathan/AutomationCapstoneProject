@@ -5,6 +5,7 @@ public class MedicarePropertyConfig {
 	public static final String CHROMEDRIVER = "webdriver.chrome.driver";
 	public static final String CHROMEDRIVERURI = "D:\\Selenium\\Capestone\\chromedriver.exe";
 	public static final String MEDICARETESTURL = "http://localhost:8081/medicare/";
+	public static final String PRODUCTIMAGEURI = "D:\\Selenium\\Capestone\\bvtestproductimage1.jpg";	
 	public static final String SRCPATHSTR = "src";
 	public static final String TESTPATHSTR = "test";
 	public static final String RESOURCESPATHSTR = "resources";
